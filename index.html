@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="icon" type="image/png" href="images/cal-logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="calculator-wrapper">
+      <div class="calculator" role="application" aria-label="Calculator">
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <div class="previous-operand" id="previous-operand"></div>
+          <div class="current-operand" id="current-operand">0</div>
+        </div>
+
+        <div class="buttons">
+          <button
+            type="button"
+            class="btn btn-clear"
+            data-action="clear"
+            aria-label="All Clear">
+            AC
+          </button>
+          <button
+            type="button"
+            class="btn btn-delete"
+            data-action="delete"
+            aria-label="Delete">
+            DEL
+          </button>
+          <button
+            type="button"
+            class="btn btn-operator"
+            data-action="percent"
+            aria-label="Percent">
+            %
+          </button>
+          <button
+            type="button"
+            class="btn btn-operator"
+            data-action="operator"
+            data-operator="÷"
+            aria-label="Divide">
+            ÷
+          </button>
+
+          <button type="button" class="btn btn-number" data-number="7">
+            7
+          </button>
+          <button type="button" class="btn btn-number" data-number="8">
+            8
+          </button>
+          <button type="button" class="btn btn-number" data-number="9">
+            9
+          </button>
+          <button
+            type="button"
+            class="btn btn-operator"
+            data-action="operator"
+            data-operator="×"
+            aria-label="Multiply">
+            ×
+          </button>
+
+          <button type="button" class="btn btn-number" data-number="4">
+            4
+          </button>
+          <button type="button" class="btn btn-number" data-number="5">
+            5
+          </button>
+          <button type="button" class="btn btn-number" data-number="6">
+            6
+          </button>
+          <button
+            type="button"
+            class="btn btn-operator"
+            data-action="operator"
+            data-operator="−"
+            aria-label="Subtract">
+            −
+          </button>
+
+          <button type="button" class="btn btn-number" data-number="1">
+            1
+          </button>
+          <button type="button" class="btn btn-number" data-number="2">
+            2
+          </button>
+          <button type="button" class="btn btn-number" data-number="3">
+            3
+          </button>
+          <button
+            type="button"
+            class="btn btn-operator"
+            data-action="operator"
+            data-operator="+"
+            aria-label="Add">
+            +
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-number btn-plus-minus"
+            data-action="plus-minus"
+            aria-label="Toggle positive negative">
+            +/−
+          </button>
+          <button type="button" class="btn btn-number" data-number="0">
+            0
+          </button>
+          <button
+            type="button"
+            class="btn btn-number"
+            data-action="decimal"
+            aria-label="Decimal point">
+            .
+          </button>
+          <button
+            type="button"
+            class="btn btn-equals"
+            data-action="equals"
+            aria-label="Equals">
+            =
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
