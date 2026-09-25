@@ -1,0 +1,201 @@
+/* CSS Variables */
+:root {
+  --bg-color: #0f172a;
+  --calculator-bg: #1e293b;
+  --display-bg: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --btn-number-bg: #334155;
+  --btn-number-hover: #475569;
+  --btn-operator-bg: #475569;
+  --btn-operator-hover: #64748b;
+  --btn-clear-bg: #ef4444;
+  --btn-clear-hover: #dc2626;
+  --btn-equals-bg: #3b82f6;
+  --btn-equals-hover: #2563eb;
+  --btn-delete-bg: #f59e0b;
+  --btn-delete-hover: #d97706;
+  --border-radius: 16px;
+  --btn-radius: 12px;
+  --gap: 12px;
+  --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition: 0.15s ease;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  padding: 16px;
+}
+
+/* Calculator Wrapper */
+.calculator-wrapper {
+  width: 100%;
+  max-width: 360px;
+}
+
+.calculator {
+  background: var(--calculator-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Display */
+.display {
+  background: var(--display-bg);
+  border-radius: var(--btn-radius);
+  padding: 20px 16px;
+  margin-bottom: 20px;
+  text-align: right;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  word-break: break-all;
+}
+
+.previous-operand {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  min-height: 1.4em;
+  margin-bottom: 4px;
+}
+
+.current-operand {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Buttons Grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+/* Base Button */
+.btn {
+  border: none;
+  border-radius: var(--btn-radius);
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: inherit;
+  height: 64px;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Number Buttons */
+.btn-number {
+  background: var(--btn-number-bg);
+}
+
+.btn-number:hover {
+  background: var(--btn-number-hover);
+}
+
+/* Operator Buttons */
+.btn-operator {
+  background: var(--btn-operator-bg);
+}
+
+.btn-operator:hover {
+  background: var(--btn-operator-hover);
+}
+
+/* Clear Button */
+.btn-clear {
+  background: var(--btn-clear-bg);
+}
+
+.btn-clear:hover {
+  background: var(--btn-clear-hover);
+}
+
+/* Delete Button */
+.btn-delete {
+  background: var(--btn-delete-bg);
+  color: #1e293b;
+}
+
+.btn-delete:hover {
+  background: var(--btn-delete-hover);
+}
+
+/* Equals Button */
+.btn-equals {
+  background: var(--btn-equals-bg);
+}
+
+.btn-equals:hover {
+  background: var(--btn-equals-hover);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .calculator {
+    padding: 16px;
+  }
+
+  .btn {
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .current-operand {
+    font-size: 2rem;
+  }
+
+  .display {
+    min-height: 90px;
+    padding: 16px 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .calculator-wrapper {
+    max-width: 380px;
+  }
+}
